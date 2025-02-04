@@ -36,7 +36,7 @@ class Header extends StatelessWidget {
             children: [
               _buildNavItem('Home', () => _scrollToSection(0)),
               _buildNavItem('About', () => _scrollToSection(1)),
-              _buildNavItem('Projects', () => _scrollToSection(2)),
+              _buildNavItem('Education', () => _scrollToSection(2)),
               _buildNavItem('Contact', () => _scrollToSection(3)),
             ],
           ),

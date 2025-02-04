@@ -35,14 +35,14 @@ class About extends StatelessWidget {
                     ),
                     Text(
                       "Hello! I'm Ahmed Sami, a Software Engineer specializing in mobile app development.",
-                      style: AppStyles.styleSemiBold20.copyWith(
+                      style: AppStyles.styleSemiBold24.copyWith(
                         color: Colors.white70,
                       ),
                     ),
                     const SizedBox(height: 10),
                     Text(
                       "I enjoy building scalable and user-friendly applications to solve real-world problems. "
-                      "\n With a strong passion for technology and a mindset for continuous improvement,\n I aim to deliver "
+                      "\nWith a strong passion for technology and a mindset for continuous improvement,\nI aim to deliver "
                       "innovative and high-quality solutions.",
                       style: TextStyle(
                         fontSize: 16,

@@ -13,16 +13,27 @@ class MyHomePage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.darkPrimaryColor,
-      body: ListView(
-        controller: scrollController, // تمرير نفس ScrollController
+      body: Stack(
         children: [
-          Header(
-              scrollController:
-                  scrollController), // تمرير ScrollController إلى الهيدر
-          const SizedBox(height: 100),
-          const Cover(),
-          const SizedBox(height: 100),
-          const About(),
+          ListView(
+            controller: scrollController,
+            children: const [
+              SizedBox(height: 190), // مساحة تترك مكان الهيدر
+              Cover(),
+              SizedBox(height: 120),
+              About(),
+              SizedBox(height: 120),
+            ],
+          ),
+          // الهيدر المثبت
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Header(
+              scrollController: scrollController, // تمرير ScrollController
+            ),
+          ),
         ],
       ),
     );
