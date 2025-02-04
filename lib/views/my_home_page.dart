@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/app_colors.dart';
+import 'package:portfolio/views/Portfolio%20Building/about.dart';
 import 'package:portfolio/views/Portfolio%20Building/cover.dart';
 import 'package:portfolio/views/Portfolio%20Building/header.dart';
 
@@ -8,16 +9,20 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scrollController = ScrollController();
+
     return Scaffold(
       backgroundColor: AppColors.darkPrimaryColor,
       body: ListView(
-        scrollDirection: Axis.vertical,
+        controller: scrollController, // تمرير نفس ScrollController
         children: [
           Header(
-            scrollController: ScrollController(),
-          ),
-          SizedBox(height: 100),
-          Cover(),
+              scrollController:
+                  scrollController), // تمرير ScrollController إلى الهيدر
+          const SizedBox(height: 100),
+          const Cover(),
+          const SizedBox(height: 100),
+          const About(),
         ],
       ),
     );
