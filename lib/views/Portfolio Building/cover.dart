@@ -14,17 +14,18 @@ class Cover extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40.0),
+            padding: const EdgeInsets.symmetric(horizontal: 80.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                SizedBox(
+                  height: 50,
+                ),
+                Text(
                   "Hi,\nI'm Ahmed Sami Ahmed",
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                  style: AppStyles.styleBold40.copyWith(
+                    color: Color(0XFF173dc2),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -59,31 +60,25 @@ class Cover extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 40, vertical: 15),
+                        horizontal: 50, vertical: 23),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                  child: const Text(
-                    "Get in touch",
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
-                    ),
-                  ),
+                  child: Text("View My Work",
+                      style:
+                          AppStyles.styleBold24.copyWith(color: Colors.white)),
                 ),
               ],
             ),
           ),
-
-          // القسم الخاص بالصورة
           Padding(
             padding: const EdgeInsets.only(right: 60.0),
             child: Column(
               children: [
                 Image.asset(
                   'assets/image/flutterlogo.png', // اسم ملف الصورة
-                  height: 400,
+                  height: 350,
                 ),
               ],
             ),

@@ -88,8 +88,21 @@ abstract class AppStyles {
     fontWeight: FontWeight.w700,
     height: 0,
   );
+  static const TextStyle styleBold20 = TextStyle(
+    color: Color(0xFF064060),
+    fontSize: 20,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w700,
+    height: 0,
+  );
   static const TextStyle styleBold30 = TextStyle(
     fontSize: 30,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w700,
+    color: Color(0XFF403f41),
+  );
+  static const TextStyle styleBold40 = TextStyle(
+    fontSize: 50,
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w700,
     color: Color(0XFF403f41),

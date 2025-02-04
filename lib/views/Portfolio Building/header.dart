@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/app_styles.dart';
 
 class Header extends StatelessWidget {
-  const Header({super.key});
+  final ScrollController scrollController;
+
+  const Header({super.key, required this.scrollController});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class Header extends StatelessWidget {
         borderRadius: BorderRadius.circular(100),
         gradient: LinearGradient(
           colors: [
-            Color(0xFF1A1B2F),
+            Color(0xFF101012),
             Color.fromARGB(255, 51, 52, 83),
           ],
           begin: Alignment.centerLeft,
@@ -32,10 +34,10 @@ class Header extends StatelessWidget {
           // Navigation Links
           Row(
             children: [
-              _buildNavItem('Home'),
-              _buildNavItem('Skills'),
-              _buildNavItem('Projects'),
-              _buildNavItem('Contact'),
+              _buildNavItem('Home', () => _scrollToSection(0)),
+              _buildNavItem('Skills', () => _scrollToSection(1)),
+              _buildNavItem('Projects', () => _scrollToSection(2)),
+              _buildNavItem('Contact', () => _scrollToSection(3)),
             ],
           ),
         ],
@@ -43,16 +45,25 @@ class Header extends StatelessWidget {
     );
   }
 
-  Widget _buildNavItem(String title) {
+  Widget _buildNavItem(String title, void Function()? onPressed) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 15),
       child: TextButton(
-        onPressed: () {
-          // Action on navigation click
-        },
-        child: Text(title,
-            style: AppStyles.styleMedium16.copyWith(color: Colors.white)),
+        onPressed: onPressed,
+        child: Text(
+          title,
+          style: AppStyles.styleMedium16.copyWith(color: Colors.white),
+        ),
       ),
+    );
+  }
+
+  void _scrollToSection(int sectionIndex) {
+    double position = sectionIndex * 600; // Adjust based on section height
+    scrollController.animateTo(
+      position,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }

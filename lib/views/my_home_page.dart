@@ -13,7 +13,9 @@ class MyHomePage extends StatelessWidget {
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [
-          Header(),
+          Header(
+            scrollController: ScrollController(),
+          ),
           SizedBox(height: 100),
           Cover(),
         ],
