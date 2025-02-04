@@ -7,10 +7,10 @@ class Skills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 40), // تقليل الـ padding
+      padding: EdgeInsets.symmetric(horizontal: 40),
       child: GridView.count(
         shrinkWrap: true,
-        crossAxisCount: 3, // تقليل العدد بحيث تظهر المربعات أصغر
+        crossAxisCount: 3,
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
         children: [
@@ -92,12 +92,19 @@ class SkillCardState extends State<SkillCard> {
 
   @override
   Widget build(BuildContext context) {
+    // تقسيم المهارات إلى نصفين
+    List<Map<String, dynamic>> leftSkills =
+        widget.skills.sublist(0, (widget.skills.length / 2).ceil());
+    List<Map<String, dynamic>> rightSkills =
+        widget.skills.sublist((widget.skills.length / 2).ceil());
+
     return MouseRegion(
       onEnter: (_) => setState(() => iconSize = 65),
       onExit: (_) => setState(() => iconSize = 50),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 5,
+        color: Colors.grey[900],
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
@@ -107,40 +114,56 @@ class SkillCardState extends State<SkillCard> {
                 duration: Duration(milliseconds: 300),
                 child: Icon(widget.icon, size: iconSize, color: Colors.blue),
               ),
-              SizedBox(height: 24),
+              SizedBox(height: 16),
               Text(
                 widget.title,
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
-              ), // تحسين وضوح العنوان
+              ),
               SizedBox(height: 16),
-              SizedBox(
-                height: 160, // زيادة الارتفاع لتناسب الأيقونات والنصوص
-                child: ListView(
-                  shrinkWrap: true,
-                  physics: BouncingScrollPhysics(),
-                  children: widget.skills
-                      .map((skill) => Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Icon(skill['icon'],
-                                  size: 18,
-                                  color:
-                                      Colors.blue), // إضافة أيقونة بجانب النص
-                              SizedBox(width: 14), // المسافة بين الأيقونة والنص
-                              Expanded(
-                                child: Text(
-                                  skill['text'],
-                                  style: TextStyle(
-                                      fontSize: 14, color: Colors.white),
-                                ), // تحسين وضوح النص
-                              ),
-                            ],
-                          ))
-                      .toList(),
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // العمود الأول (القائمة اليسرى)
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: leftSkills.map((skill) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: Row(
+                          children: [
+                            Icon(skill['icon'], size: 18, color: Colors.blue),
+                            SizedBox(width: 10),
+                            Text(skill['text'],
+                                style: TextStyle(
+                                    fontSize: 14, color: Colors.white)),
+                          ],
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                  SizedBox(width: 40), // المسافة بين القائمتين
+                  // العمود الثاني (القائمة اليمنى)
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: rightSkills.map((skill) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: Row(
+                          children: [
+                            Icon(skill['icon'], size: 18, color: Colors.blue),
+                            SizedBox(width: 10),
+                            Text(skill['text'],
+                                style: TextStyle(
+                                    fontSize: 14, color: Colors.white)),
+                          ],
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ],
               ),
             ],
           ),
