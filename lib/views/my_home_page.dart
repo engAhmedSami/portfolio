@@ -5,6 +5,7 @@ import 'package:portfolio/views/PortfolioBuilding/cover.dart';
 import 'package:portfolio/views/PortfolioBuilding/education.dart';
 import 'package:portfolio/views/PortfolioBuilding/header.dart';
 import 'package:portfolio/views/PortfolioBuilding/skills.dart';
+import 'package:portfolio/views/PortfolioBuilding/whatwedo.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -20,7 +21,7 @@ class MyHomePage extends StatelessWidget {
           ListView(
             controller: scrollController,
             children: const [
-              SizedBox(height: 190), // مساحة تترك مكان الهيدر
+              SizedBox(height: 190),
               Cover(),
               SizedBox(height: 120),
               About(),
@@ -28,6 +29,8 @@ class MyHomePage extends StatelessWidget {
               Education(),
               SizedBox(height: 120),
               Skills(),
+              SizedBox(height: 120),
+              Services(),
               SizedBox(height: 120),
             ],
           ),

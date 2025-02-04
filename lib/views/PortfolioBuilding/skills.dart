@@ -7,7 +7,7 @@ class Skills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 40),
+      padding: EdgeInsets.symmetric(horizontal: 80),
       child: GridView.count(
         shrinkWrap: true,
         crossAxisCount: 3,
@@ -104,7 +104,7 @@ class SkillCardState extends State<SkillCard> {
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 5,
-        color: Colors.grey[900],
+        color: const Color(0xFF0e0e10),
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
