@@ -59,7 +59,7 @@ class Header extends StatelessWidget {
   }
 
   void _scrollToSection(int sectionIndex) {
-    double position = sectionIndex * 600; // Adjust based on section height
+    double position = sectionIndex * 500; // Adjust based on section height
     scrollController.animateTo(
       position,
       duration: Duration(milliseconds: 500),

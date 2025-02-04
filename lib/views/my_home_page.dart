@@ -4,6 +4,7 @@ import 'package:portfolio/views/PortfolioBuilding/about.dart';
 import 'package:portfolio/views/PortfolioBuilding/cover.dart';
 import 'package:portfolio/views/PortfolioBuilding/education.dart';
 import 'package:portfolio/views/PortfolioBuilding/header.dart';
+import 'package:portfolio/views/PortfolioBuilding/skills.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -26,7 +27,7 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 120),
               Education(),
               SizedBox(height: 120),
-              // SkillsSection(),
+              Skills(),
               SizedBox(height: 120),
             ],
           ),
