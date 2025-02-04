@@ -4,6 +4,7 @@ import 'package:portfolio/views/PortfolioBuilding/about.dart';
 import 'package:portfolio/views/PortfolioBuilding/cover.dart';
 import 'package:portfolio/views/PortfolioBuilding/education.dart';
 import 'package:portfolio/views/PortfolioBuilding/header.dart';
+import 'package:portfolio/views/PortfolioBuilding/projects.dart';
 import 'package:portfolio/views/PortfolioBuilding/skills.dart';
 import 'package:portfolio/views/PortfolioBuilding/whatwedo.dart';
 
@@ -29,6 +30,10 @@ class MyHomePage extends StatelessWidget {
               Education(),
               SizedBox(height: 120),
               Skills(),
+              SizedBox(height: 120),
+              Services(),
+              SizedBox(height: 120),
+              Projects(),
               SizedBox(height: 120),
               Services(),
               SizedBox(height: 120),
