@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/app_styles.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -24,10 +25,8 @@ class Header extends StatelessWidget {
         children: [
           Text(
             'Ahmed Sami Ahmed',
-            style: TextStyle(
-              color: Color(0xFFFFC107), // اللون الأصفر
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+            style: AppStyles.styleSemiBold24.copyWith(
+              color: Colors.white24,
             ),
           ),
           // Navigation Links
@@ -37,7 +36,6 @@ class Header extends StatelessWidget {
               _buildNavItem('Skills'),
               _buildNavItem('Projects'),
               _buildNavItem('Contact'),
-              _buildNavItem('Blog'),
             ],
           ),
         ],
@@ -52,13 +50,8 @@ class Header extends StatelessWidget {
         onPressed: () {
           // Action on navigation click
         },
-        child: Text(
-          title,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-          ),
-        ),
+        child: Text(title,
+            style: AppStyles.styleMedium16.copyWith(color: Colors.white)),
       ),
     );
   }
