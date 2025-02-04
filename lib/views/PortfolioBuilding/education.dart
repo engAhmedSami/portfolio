@@ -7,11 +7,10 @@ class Education extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 80),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
@@ -60,9 +59,7 @@ class EducationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        margin: const EdgeInsets.symmetric(
-          horizontal: 10,
-        ),
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: const Color(0xFF0e0e10),

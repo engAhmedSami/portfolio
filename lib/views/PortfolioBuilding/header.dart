@@ -31,13 +31,13 @@ class Header extends StatelessWidget {
               color: Colors.white24,
             ),
           ),
-          // Navigation Links
           Row(
             children: [
               _buildNavItem('Home', () => _scrollToSection(0)),
               _buildNavItem('About', () => _scrollToSection(1)),
               _buildNavItem('Education', () => _scrollToSection(2)),
-              _buildNavItem('Contact', () => _scrollToSection(3)),
+              _buildNavItem('Skills', () => _scrollToSection(3)),
+              _buildNavItem('Contact', () => _scrollToSection(4)),
             ],
           ),
         ],

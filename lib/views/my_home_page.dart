@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/app_colors.dart';
-import 'package:portfolio/views/Portfolio%20Building/about.dart';
-import 'package:portfolio/views/Portfolio%20Building/cover.dart';
-import 'package:portfolio/views/Portfolio%20Building/education.dart';
-import 'package:portfolio/views/Portfolio%20Building/header.dart';
+import 'package:portfolio/views/PortfolioBuilding/about.dart';
+import 'package:portfolio/views/PortfolioBuilding/cover.dart';
+import 'package:portfolio/views/PortfolioBuilding/education.dart';
+import 'package:portfolio/views/PortfolioBuilding/header.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -25,6 +25,8 @@ class MyHomePage extends StatelessWidget {
               About(),
               SizedBox(height: 120),
               Education(),
+              SizedBox(height: 120),
+              // SkillsSection(),
               SizedBox(height: 120),
             ],
           ),
