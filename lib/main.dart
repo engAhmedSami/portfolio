@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:portfolio/views/dash_board_view.dart';
+import 'package:portfolio/dash_board_view.dart';
 
 void main() {
   runApp(const MyApp());

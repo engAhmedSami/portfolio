@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/app_colors.dart';
-import 'package:portfolio/views/PortfolioBuilding/about.dart';
-import 'package:portfolio/views/PortfolioBuilding/contact.dart';
-import 'package:portfolio/views/PortfolioBuilding/cover.dart';
-import 'package:portfolio/views/PortfolioBuilding/education.dart';
-import 'package:portfolio/views/PortfolioBuilding/header.dart';
-import 'package:portfolio/views/PortfolioBuilding/projects.dart';
-import 'package:portfolio/views/PortfolioBuilding/skills.dart';
-import 'package:portfolio/views/PortfolioBuilding/testimonials.dart';
-import 'package:portfolio/views/PortfolioBuilding/whatwedo.dart';
+import 'package:portfolio/views/PortfolioBuildingForWeb/about.dart';
+import 'package:portfolio/views/PortfolioBuildingForWeb/contact.dart';
+import 'package:portfolio/views/PortfolioBuildingForWeb/cover.dart';
+import 'package:portfolio/views/PortfolioBuildingForWeb/education.dart';
+import 'package:portfolio/views/PortfolioBuildingForWeb/header.dart';
+import 'package:portfolio/views/PortfolioBuildingForWeb/projects.dart';
+import 'package:portfolio/views/PortfolioBuildingForWeb/skills.dart';
+import 'package:portfolio/views/PortfolioBuildingForWeb/testimonials.dart';
+import 'package:portfolio/views/PortfolioBuildingForWeb/whatwedo.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -25,7 +25,7 @@ class MyHomePage extends StatelessWidget {
             controller: scrollController,
             child: Column(
               children: const [
-                SizedBox(height: 190),
+                SizedBox(height: 170),
                 Cover(),
                 SizedBox(height: 120),
                 About(),
