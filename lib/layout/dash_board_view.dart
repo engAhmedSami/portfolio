@@ -41,7 +41,7 @@ class _DashBoardViewState extends State<DashBoardView> {
           : null,
       body: AdaptiveLayout(
         desktopLayout: (context) => const MyHomePage(),
-        mobileLayout: (context) => const DashBoardMobileLayout(),
+        mobileLayout: (context) => const MobileLayout(),
         tabletLayout: (context) => const TabletLayout(),
       ),
     );
