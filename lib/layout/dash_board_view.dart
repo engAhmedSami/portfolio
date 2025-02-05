@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/views/adaptive_layout_widget.dart';
-import 'package:portfolio/mobile_layout.dart';
-import 'package:portfolio/tablet_layout.dart';
+import 'package:portfolio/layout/adaptive_layout_widget.dart';
+import 'package:portfolio/layout/mobile_layout.dart';
+import 'package:portfolio/layout/tablet_layout.dart';
 import 'package:portfolio/views/drawer/custom_drawer.dart';
-import 'package:portfolio/web_layout.dart';
-import 'package:portfolio/views/size_config.dart';
+import 'package:portfolio/layout/web_layout.dart';
+import 'package:portfolio/layout/size_config.dart';
 
 class DashBoardView extends StatefulWidget {
   const DashBoardView({super.key});
@@ -20,10 +20,10 @@ class _DashBoardViewState extends State<DashBoardView> {
     SizeConfig.init(context);
     return Scaffold(
       key: scaffoldKey,
-      appBar: MediaQuery.sizeOf(context).width < SizeConfig.tablet
+      appBar: MediaQuery.sizeOf(context).width < SizeConfig.desktop
           ? AppBar(
               elevation: 0,
-              backgroundColor: const Color(0xfff7f9fa),
+              backgroundColor: const Color(0xff173dc2),
               leading: IconButton(
                 icon: const Icon(Icons.menu),
                 onPressed: () {
