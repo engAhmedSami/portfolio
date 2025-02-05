@@ -24,7 +24,6 @@ class TabletLayout extends StatelessWidget {
             controller: scrollController,
             child: Column(
               children: const [
-                SizedBox(height: 170),
                 Cover(),
                 SizedBox(height: 120),
                 About(),

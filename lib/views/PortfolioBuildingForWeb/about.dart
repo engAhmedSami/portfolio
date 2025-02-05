@@ -31,7 +31,7 @@ class About extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      height: 70,
+                      height: 60,
                     ),
                     Text(
                       "Hello! I'm Ahmed Sami, a Software Engineer specializing in mobile app development.",
