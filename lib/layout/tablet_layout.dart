@@ -7,7 +7,7 @@ import 'package:portfolio/views/PortfolioBuildingForWeb/education.dart';
 import 'package:portfolio/views/PortfolioBuildingForWeb/projects.dart';
 import 'package:portfolio/views/PortfolioBuildingForWeb/skills.dart';
 import 'package:portfolio/views/PortfolioBuildingForWeb/testimonials.dart';
-import 'package:portfolio/views/PortfolioBuildingForWeb/whatwedo.dart';
+import 'package:portfolio/views/mobile/widget/mobile_service.dart';
 
 class TabletLayout extends StatelessWidget {
   const TabletLayout({super.key});
@@ -32,7 +32,7 @@ class TabletLayout extends StatelessWidget {
                 SizedBox(height: 120),
                 Skills(),
                 SizedBox(height: 120),
-                Services(),
+                MobileService(),
                 SizedBox(height: 120),
                 Projects(),
                 SizedBox(height: 120),

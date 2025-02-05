@@ -198,11 +198,12 @@ class Contact extends StatelessWidget {
     );
   }
 
-  // 🌍 فتح الروابط عند النقر على الأيقونات
+  // 🌍 فتح الروابط عند النقر على الأيقوناتimport 'package:url_launcher/url_launcher.dart';
+
   Future<void> _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
-    if (await canLaunch(url)) {
-      await launch(url, forceWebView: false, forceSafariVC: false);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else {
       debugPrint("Could not launch $url");
     }
