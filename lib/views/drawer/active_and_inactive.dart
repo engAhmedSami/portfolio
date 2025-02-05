@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/drawer_item_model.dart';
+import 'package:portfolio/views/drawer/drawer_item_model.dart';
 import 'package:portfolio/utils/app_styles.dart';
 
 class InActiveDrawerItem extends StatelessWidget {

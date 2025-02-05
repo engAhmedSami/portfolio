@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/adaptive_layout_widget.dart';
-import 'package:portfolio/dash_board_mobile_layout.dart';
-import 'package:portfolio/dash_board_tablet_layout.dart';
-import 'package:portfolio/views/custom_drawer.dart';
-import 'package:portfolio/views/my_home_page.dart';
+import 'package:portfolio/views/adaptive_layout_widget.dart';
+import 'package:portfolio/mobile_layout.dart';
+import 'package:portfolio/tablet_layout.dart';
+import 'package:portfolio/views/drawer/custom_drawer.dart';
+import 'package:portfolio/web_layout.dart';
 import 'package:portfolio/views/size_config.dart';
 
 class DashBoardView extends StatefulWidget {
