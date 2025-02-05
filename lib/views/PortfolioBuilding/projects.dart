@@ -134,7 +134,7 @@ class _ProjectCardState extends State<ProjectCard> {
     return Container(
       width: 320, // تحديد عرض البطاقة
       decoration: BoxDecoration(
-        color: Colors.blueGrey[900], // لون داكن أنيق
+        color: const Color(0xFF0e0e10), // لون داكن أنيق
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(color: Colors.black26, blurRadius: 6, offset: Offset(0, 4))
