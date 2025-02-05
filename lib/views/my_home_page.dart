@@ -21,35 +21,35 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: AppColors.darkPrimaryColor,
       body: Stack(
         children: [
-          ListView(
+          SingleChildScrollView(
             controller: scrollController,
-            children: const [
-              SizedBox(height: 190),
-              Cover(),
-              SizedBox(height: 120),
-              About(),
-              SizedBox(height: 120),
-              Education(),
-              SizedBox(height: 120),
-              Skills(),
-              SizedBox(height: 120),
-              Services(),
-              SizedBox(height: 120),
-              Projects(),
-              SizedBox(height: 120),
-              Testimonials(),
-              SizedBox(height: 120),
-              PortfolioFooter()
-            ],
+            child: Column(
+              children: const [
+                SizedBox(height: 190),
+                Cover(),
+                SizedBox(height: 120),
+                About(),
+                SizedBox(height: 120),
+                Education(),
+                SizedBox(height: 120),
+                Skills(),
+                SizedBox(height: 120),
+                Services(),
+                SizedBox(height: 120),
+                Projects(),
+                SizedBox(height: 120),
+                Testimonials(),
+                SizedBox(height: 120),
+                Contact(),
+              ],
+            ),
           ),
-          // الهيدر المثبت
+          // الهيدر الثابت
           Positioned(
             top: 0,
             left: 0,
             right: 0,
-            child: Header(
-              scrollController: scrollController, // تمرير ScrollController
-            ),
+            child: Header(scrollController: scrollController),
           ),
         ],
       ),

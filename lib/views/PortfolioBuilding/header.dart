@@ -6,6 +6,14 @@ class Header extends StatelessWidget {
 
   const Header({super.key, required this.scrollController});
 
+  void _scrollToSection(double offset) {
+    scrollController.animateTo(
+      offset,
+      duration: const Duration(milliseconds: 600),
+      curve: Curves.easeInOut,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,8 +23,12 @@ class Header extends StatelessWidget {
         borderRadius: BorderRadius.circular(100),
         gradient: LinearGradient(
           colors: [
-            Color(0xFF101012),
-            Color.fromARGB(255, 51, 52, 83),
+            const Color(0xFF101012).withValues(
+              alpha: 0.7,
+            ),
+            const Color.fromARGB(255, 51, 52, 83).withValues(
+              alpha: 0.7,
+            ),
           ],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
@@ -27,20 +39,18 @@ class Header extends StatelessWidget {
         children: [
           Text(
             'Ahmed Sami Ahmed',
-            style: AppStyles.styleSemiBold24.copyWith(
-              color: Colors.white24,
-            ),
+            style: AppStyles.styleSemiBold24.copyWith(color: Colors.white70),
           ),
           Row(
             children: [
-              _buildNavItem('Home', () => _scrollToSection(0)),
-              _buildNavItem('About', () => _scrollToSection(1)),
-              _buildNavItem('Education', () => _scrollToSection(2)),
-              _buildNavItem('Skills', () => _scrollToSection(3)),
-              _buildNavItem('Services', () => _scrollToSection(4)),
-              _buildNavItem('Projects', () => _scrollToSection(5)),
-              _buildNavItem('Testimonials', () => _scrollToSection(7)),
-              _buildNavItem('Contact', () => _scrollToSection(9)),
+              _buildNavItem('Home', 0),
+              _buildNavItem('About', 550),
+              _buildNavItem('Education', 950),
+              _buildNavItem('Skills', 1500),
+              _buildNavItem('Services', 2000),
+              _buildNavItem('Projects', 2650),
+              _buildNavItem('Testimonials', 3650),
+              _buildNavItem('Contact', 4000),
             ],
           ),
         ],
@@ -48,25 +58,16 @@ class Header extends StatelessWidget {
     );
   }
 
-  Widget _buildNavItem(String title, void Function()? onPressed) {
+  Widget _buildNavItem(String title, double offset) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: TextButton(
-        onPressed: onPressed,
+        onPressed: () => _scrollToSection(offset),
         child: Text(
           title,
           style: AppStyles.styleMedium16.copyWith(color: Colors.white),
         ),
       ),
-    );
-  }
-
-  void _scrollToSection(int sectionIndex) {
-    double position = sectionIndex * 500; // Adjust based on section height
-    scrollController.animateTo(
-      position,
-      duration: Duration(milliseconds: 500),
-      curve: Curves.easeInOut,
     );
   }
 }
