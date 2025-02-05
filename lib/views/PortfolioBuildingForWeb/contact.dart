@@ -9,7 +9,7 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        bool isSmallScreen = constraints.maxWidth < 1500;
+        bool isSmallScreen = constraints.maxWidth < 1450;
 
         return Container(
           padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 80),
