@@ -12,13 +12,13 @@ class Services extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           GridView.count(
             crossAxisCount: 2,
             shrinkWrap: true,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            childAspectRatio: 4,
+            childAspectRatio: 2.8, // ✅ تقليل نسبة العرض إلى الارتفاع
             children: [
               ServiceCard(
                 icon: FontAwesomeIcons.mobile,
@@ -57,11 +57,12 @@ class ServiceCard extends StatelessWidget {
   final String title;
   final String description;
 
-  const ServiceCard(
-      {super.key,
-      required this.icon,
-      required this.title,
-      required this.description});
+  const ServiceCard({
+    super.key,
+    required this.icon,
+    required this.title,
+    required this.description,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -72,23 +73,30 @@ class ServiceCard extends StatelessWidget {
       ),
       elevation: 4,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(12.0), // ✅ زيادة التباعد الداخلي
         child: Column(
+          mainAxisSize: MainAxisSize
+              .min, // ✅ يجبر الـ Column على أخذ المساحة المطلوبة فقط
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(icon, size: 30, color: Colors.blue),
-            SizedBox(height: 5),
+            const SizedBox(height: 8),
             Text(
               title,
+              textAlign: TextAlign.center,
               style: AppStyles.styleBold20.copyWith(
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 10),
-            Text(description,
+            const SizedBox(height: 6),
+            Expanded(
+              // ✅ يجعل النص يتمدد دون تجاوز الحواف
+              child: Text(
+                description,
                 textAlign: TextAlign.center,
-                style:
-                    AppStyles.styleRegular16.copyWith(color: Colors.white54)),
+                style: AppStyles.styleRegular16.copyWith(color: Colors.white54),
+              ),
+            ),
           ],
         ),
       ),

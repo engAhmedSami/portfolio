@@ -46,7 +46,7 @@ class Header extends StatelessWidget {
               _buildNavItem('Home', 0),
               _buildNavItem('About', 550),
               _buildNavItem('Education', 950),
-              _buildNavItem('Skills', 1500),
+              _buildNavItem('Skills', 1650),
               _buildNavItem('Services', 2000),
               _buildNavItem('Projects', 2650),
               _buildNavItem('Testimonials', 3650),

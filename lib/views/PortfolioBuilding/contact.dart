@@ -7,102 +7,110 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 80),
-      color: const Color(0xFF0a0a0c), // لون الخلفية الداكن
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 140,
-            runSpacing: 30,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        bool isSmallScreen = constraints.maxWidth < 1500;
+
+        return Container(
+          padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 80),
+          color: const Color(0xFF0a0a0c), // لون الخلفية الداكن
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 🔹 معلومات المطور
-              SizedBox(
-                width: 320,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Row(
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 140,
+                runSpacing: 30,
+                children: [
+                  // 🔹 معلومات المطور
+                  SizedBox(
+                    width: 320,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(Icons.design_services,
-                            color: Colors.white, size: 20),
-                        SizedBox(width: 8),
-                        Text(
-                          "Developer",
+                        const Row(
+                          children: [
+                            Icon(Icons.design_services,
+                                color: Colors.white, size: 20),
+                            SizedBox(width: 8),
+                            Text(
+                              "Developer",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        const Text(
+                          "We provide a seamless and innovative mobile app experience with a modern design, smooth performance, and an intuitive user interface. Our goal is to create smart and efficient applications that simplify your daily tasks and enhance your digital experience.",
                           style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                            color: Colors.white70,
+                            fontSize: 13,
+                            height: 1.6,
                           ),
+                        ),
+                        const SizedBox(height: 12),
+                        // أيقونات وسائل التواصل الاجتماعي
+                        Row(
+                          children: [
+                            _socialIcon(FontAwesomeIcons.linkedin,
+                                "https://www.linkedin.com/in/ahmedsami011/"),
+                            _socialIcon(FontAwesomeIcons.github,
+                                "https://github.com/engAhmedSami"),
+                          ],
                         ),
                       ],
                     ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      "We provide a seamless and innovative mobile app experience with a modern design, smooth performance, and an intuitive user interface. Our goal is to create smart and efficient applications that simplify your daily tasks and enhance your digital experience.",
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 13,
-                        height: 1.6,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    // أيقونات وسائل التواصل الاجتماعي
-                    Row(
+                  ),
+                  // عرض الروابط فقط في الشاشات الكبيرة
+                  if (!isSmallScreen)
+                    _footerColumn("Quick link", [
+                      "Home",
+                      "Service",
+                      "Projects",
+                      "About",
+                      "Client",
+                      "Contact",
+                    ]),
+                  if (!isSmallScreen)
+                    _footerColumn("Important", [
+                      "Career",
+                      "Terms & Conditions",
+                      "Privacy Policy",
+                      "Cookies Policy",
+                      "Social Work",
+                    ]),
+                  // 📞 معلومات الاتصال
+                  SizedBox(
+                    width: 250,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _socialIcon(FontAwesomeIcons.linkedin,
-                            "https://www.linkedin.com/in/ahmedsami011/"),
-                        _socialIcon(FontAwesomeIcons.github,
-                            "https://github.com/engAhmedSami"),
+                        const Text(
+                          "Contacts",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        _contactRow(Icons.phone, "+20 01023582057"),
+                        _contactRow(Icons.email, "ii.ahmedsami0@gmail.com"),
+                        _contactRow(
+                            Icons.location_on, "Egypt, Dakahlia, Mansoura"),
                       ],
                     ),
-                  ],
-                ),
-              ),
-              // 🔗 الروابط السريعة
-              _footerColumn("Quick link", [
-                "Home",
-                "Service",
-                "Projects",
-                "About",
-                "Client",
-                "Contact",
-              ]),
-              // 📜 الروابط المهمة
-              _footerColumn("Important", [
-                "Career",
-                "Terms & Conditions",
-                "Privacy Policy",
-                "Cookies Policy",
-                "Social Work",
-              ]),
-              // 📞 معلومات الاتصال
-              SizedBox(
-                width: 250,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Contacts",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    _contactRow(Icons.phone, "+20 01023582057"),
-                    _contactRow(Icons.email, "ii.ahmedsami0@gmail.com"),
-                    _contactRow(Icons.location_on, "Egypt, Dakahlia, Mansoura"),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
