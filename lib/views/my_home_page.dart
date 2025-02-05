@@ -44,7 +44,6 @@ class MyHomePage extends StatelessWidget {
               ],
             ),
           ),
-          // الهيدر الثابت
           Positioned(
             top: 0,
             left: 0,

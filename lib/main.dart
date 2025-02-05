@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/views/my_home_page.dart';
+import 'package:portfolio/views/dash_board_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Ahmed Sami Ahmed',
       theme: ThemeData.dark(),
-      home: MyHomePage(),
+      home: DashBoardView(),
     );
   }
 }
