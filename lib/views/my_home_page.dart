@@ -35,8 +35,6 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 120),
               Projects(),
               SizedBox(height: 120),
-              Services(),
-              SizedBox(height: 120),
             ],
           ),
           // الهيدر المثبت
