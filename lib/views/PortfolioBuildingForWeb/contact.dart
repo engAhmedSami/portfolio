@@ -9,7 +9,7 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        bool isSmallScreen = constraints.maxWidth < 1450;
+        bool isSmallScreen = constraints.maxWidth < 1300;
 
         return Container(
           padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 80),
@@ -21,7 +21,7 @@ class Contact extends StatelessWidget {
               children: [
                 Wrap(
                   alignment: WrapAlignment.start, // ✅ التأكد من المحاذاة اليسرى
-                  spacing: 140,
+                  spacing: 120,
                   runSpacing: 30,
                   children: [
                     // 🔹 معلومات المطور
